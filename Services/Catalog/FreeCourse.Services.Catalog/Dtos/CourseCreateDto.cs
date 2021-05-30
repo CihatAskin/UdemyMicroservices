@@ -1,7 +1,7 @@
 ﻿
 namespace FreeCourse.Services.Catalog.Dtos
 {
-    class CourseCreateDto
+    public class CourseCreateDto
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
