@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IdentityServer.Services;
 
 namespace IdentityServer
 {
@@ -57,6 +58,7 @@ namespace IdentityServer
 
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();
+            builder.AddResourceOwnerValidator<IdentityResourceOwnerPasswordValidator>();
 
             services.AddAuthentication()
                 .AddGoogle(options =>
